@@ -1,0 +1,16 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen with the fabs :)
+</p>
+
+Fab Position<br>
+<mat-button-toggle-group name="fontStyle" [(ngModel)]="speedDialFabPosition" aria-label="Font Style">
+  <mat-button-toggle [value]="SpeedDialFabPosition.Top" matTooltip="Position Speed Dial Fab at the top">TOP</mat-button-toggle>
+  <mat-button-toggle [value]="SpeedDialFabPosition.Bottom" matTooltip="Position Speed Dial Fab at the bottom">BOTTOM</mat-button-toggle>
+</mat-button-toggle-group>
+
+<speed-dial-fab class="speed-dial-container" [ngClass]="speedDialFabPosition" [reverse-column-direction]="speedDialFabPosition===SpeedDialFabPosition.Bottom" (fabClick)="onSpeedDialFabClicked($event)" [buttons]="speedDialFabButtons"></speed-dial-fab>
+
+<!--
+<app-speed-dial-fab *ngIf="speedDialFabColumnDirection==SpeedDialFabPosition.Bottom" class="speed-dial-container-bottom" [column-direction]="'column-reverse'"></app-speed-dial-fab>
+-->
